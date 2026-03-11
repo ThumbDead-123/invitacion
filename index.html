@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación de Boda</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="rosas-container" id="rosas"></div>
+
+<div class="contenedor">
+
+<div class="sobre" id="sobre">
+
+<img class="sobre-img" src="https://images.unsplash.com/photo-1606800052052-a08af7148866" alt="sobre">
+
+<div class="mensaje">
+Haz click para abrir la invitación
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const sobre = document.getElementById("sobre")
+const rosasContainer = document.getElementById("rosas")
+
+sobre.addEventListener("click", () => {
+
+crearRosas()
+
+setTimeout(()=>{
+window.location.href="invitacion.html"
+},3000)
+
+})
+
+function crearRosas(){
+
+for(let i=0;i<35;i++){
+
+const rosa = document.createElement("img")
+
+rosa.src="images.png"  /* rosa blanca PNG */
+
+rosa.classList.add("rosa")
+
+rosa.style.left=Math.random()*100+"vw"
+
+rosa.style.animationDuration=(4+Math.random()*3)+"s"
+
+rosasContainer.appendChild(rosa)
+
+}
+
+}
+
+</script>
+</body>
+</html>
